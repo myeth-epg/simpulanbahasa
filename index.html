@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simpulan Bahasa 游戏：漂浮挑战</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', 'Chalkboard SE', 'Segoe UI', sans-serif;
+            background-color: #87CEEB; /* Sky blue */
+            margin: 0;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .game-area {
+            position: relative;
+            width: 800px;
+            height: 500px;
+            background: linear-gradient(to bottom, #a1c4fd 0%, #c2e9fb 100%);
+            border: 5px solid #fff;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        .timer-display {
+            position: absolute;
+            top: 55px;
+            right: 15px;
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #9e9e9e;
+            background: rgba(255, 255, 255, 0.6);
+            padding: 5px 15px;
+            border-radius: 10px;
+            border: 2px solid #9e9e9e;
+            z-index: 10;
+        }
+        
+        .level-indicator {
+            position: absolute;
+            top: 10px;
+            left: 15px;
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #333;
+            background: rgba(255,255,255,0.7);
+            padding: 5px 15px;
+            border-radius: 10px;
+            z-index: 5;
+        }
+
+        .instruction-text {
+            position: absolute;
+            top: 110px;
+            width: 100%;
+            text-align: center;
+            font-size: 1.5em;
+            color: #1565C0;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(255,255,255,0.8);
+            padding: 0 20px;
+            box-sizing: border-box;
+            z-index: 10;
+        }
+
+        .floating-prefix {
+            position: absolute;
+            top: 35%;
+            left: 5%;
+            background-color: #FFE0B2; /* Light orange */
+            color: #333;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            font-size: 1.5em;
+            font-weight: bold;
+            padding: 15px 20px;
+            border: 4px solid #4CAF50;
+            border-radius: 15px;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            z-index: 10;
+            width: 45%;
+            text-align: center;
+            word-wrap: break-word;
+        }
+
+        .words-container {
+            position: absolute;
+            right: 5%;
+            top: 30%;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 40%;
+        }
+
+        .root-word {
+            background-color: white;
+            color: #333;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            font-size: 1.5em;
+            font-weight: bold;
+            padding: 10px 10px;
+            border: 4px solid #4CAF50;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            width: 100%;
+            text-align: center;
+        }
+
+        .root-word:hover {
+            transform: scale(1.05);
+            background-color: #e8f5e9;
+        }
+
+        .correct {
+            background-color: #4CAF50 !important;
+            color: white !important;
+            border-color: #2E7D32 !important;
+            animation: bounce 0.5s;
+        }
+
+        .incorrect {
+            background-color: #F44336 !important;
+            color: white !important;
+            border-color: #B71C1C !important;
+            opacity: 0.6;
+            pointer-events: none;
+        }
+
+        .grayed-out {
+            background-color: #e0e0e0 !important;
+            color: #9e9e9e !important;
+            border-color: #bdbdbd !important;
+            opacity: 0.5;
+            pointer-events: none;
+            box-shadow: none;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-20px);}
+            60% {transform: translateY(-10px);}
+        }
+
+        .feedback-message {
+            position: absolute;
+            bottom: 60px;
+            width: 100%;
+            text-align: center;
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #333;
+            text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
+            transition: color 0.3s;
+            padding: 0 20px;
+            box-sizing: border-box;
+            z-index: 20;
+        }
+
+        .combined-word-display {
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #333;
+            text-shadow: 2px 2px 5px rgba(255,255,255,0.6);
+            display: none;
+            z-index: 40;
+            width: 90%;
+        }
+        
+        .action-btn {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 12px 25px;
+            font-size: 1.2em;
+            font-weight: bold;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            display: none;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            transition: background 0.2s;
+            z-index: 30;
+        }
+        
+        .action-btn:hover {
+            background: #0056b3;
+        }
+
+        .music-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: rgba(255,255,255,0.7);
+            border: 2px solid #ccc;
+            padding: 5px 15px;
+            font-size: 1.2em;
+            border-radius: 10px;
+            cursor: pointer;
+            z-index: 10;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+        .music-btn:hover { background: rgba(255,255,255,1); border-color: #999; }
+        
+        @media (max-width: 768px) {
+            .game-area {
+                width: 100%;
+                height: 100vh;
+                max-height: none;
+                border: none;
+                border-radius: 0;
+            }
+            .level-indicator { font-size: 1.1em; top: 10px; left: 10px; padding: 5px 10px; }
+            .music-btn { font-size: 1em; top: 10px; right: 10px; padding: 5px 10px; }
+            .timer-display { font-size: 1.2em; top: 50px; right: 10px; padding: 5px 10px; }
+            .instruction-text { font-size: 1.1em; top: 105px; padding: 0 10px; line-height: 1.2; }
+            .floating-prefix { 
+                font-size: 1.2em; 
+                padding: 12px 10px; 
+                left: 50%; 
+                top: 155px; 
+                transform: translateX(-50%);
+                width: 90%;
+            }
+            .words-container { 
+                width: 90%; 
+                left: 5%; 
+                top: 250px; 
+                gap: 12px; 
+            }
+            .root-word { font-size: 1.3em; padding: 12px 10px; }
+            .feedback-message { font-size: 2.2em; top: 480px; left: 50%; transform: translateX(-50%); bottom: auto; padding: 0 10px; line-height: 1.2; z-index: 50; text-shadow: 2px 2px 5px white, -2px -2px 5px white; }
+            .combined-word-display { font-size: 1.5em; left: 50%; top: 35%; width: 95%; line-height: 1.2; }
+            .action-btn { width: 90%; font-size: 1.1em; padding: 12px; bottom: 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <audio id="sfx-correct">
+        <source src="correct.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="sfx-wrong">
+        <source src="wrong.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="sfx-timeout">
+        <source src="timeout.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="game-area" id="game-area">
+        <div class="timer-display" id="timer-display">时间: 10秒</div>
+        <div class="level-indicator" id="level-indicator">
+            第 1 关<br>
+            <span style="font-size: 0.8em; color: #2E7D32;">✅ <span id="score-b">0</span></span> | 
+            <span style="font-size: 0.8em; color: #c62828;">❌ <span id="score-s">0</span></span>
+        </div>
+        <button class="music-btn" id="music-btn" onclick="toggleMusic()">🔇 音效</button>
+        
+        <div class="instruction-text" id="instruction-text">请为这个意思选择正确的 Simpulan Bahasa (成语)。</div>
+        
+        <div class="combined-word-display" id="result-word"></div>
+
+        <div class="floating-prefix" id="prefix"></div>
+
+        <div class="words-container" id="words-container">
+        </div>
+
+        <div class="feedback-message" id="feedback-msg"></div>
+    </div>
+
+    <script>
+        let currentRound = 1;
+        let gameActive = true;
+        let scoreBetul = 0;
+        let scoreSalah = 0;
+        let hasMadeMistakeThisRound = false;
+        let currentQuestion = {};
+        let isMusicPlaying = false; // Note: only used for SFX now
+        let allQuestions = [];
+        let totalQuestions = 0;
+        let originalData = [];
+        let countdownTimer;
+        let timeLeft = 10;
+        
+        function toggleMusic() {
+            const btn = document.getElementById('music-btn');
+            if (isMusicPlaying) {
+                btn.textContent = "🔇 音效";
+            } else {
+                btn.textContent = "🔊 音效";
+            }
+            isMusicPlaying = !isMusicPlaying;
+        }
+
+        function playSFX(id) {
+            if (isMusicPlaying) {
+                const sfx = document.getElementById(id);
+                if (sfx) {
+                    sfx.currentTime = 0;
+                    sfx.play().catch(e => console.log("SFX play failed:", e));
+                }
+            }
+        }
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        async function loadData() {
+            try {
+                const response = await fetch('simpulanbahasa_data.json');
+                if (!response.ok) throw new Error('Network response was not ok');
+                originalData = await response.json();
+                
+                allQuestions = [...originalData];
+                shuffleArray(allQuestions);
+                totalQuestions = allQuestions.length;
+                
+                loadLevel();
+            } catch (error) {
+                console.error('Error loading JSON:', error);
+                document.getElementById('feedback-msg').textContent = "错误：无法读取 JSON 文件。请使用 'Run_Game_Server.bat' 运行。";
+                document.getElementById('feedback-msg').style.color = "red";
+            }
+        }
+
+        function generateWrongChoices(correctAnswer) {
+            let wrongs = [];
+            let seen = new Set();
+            seen.add(correctAnswer);
+            while(wrongs.length < 2) {
+                let randomItem = originalData[Math.floor(Math.random() * originalData.length)];
+                if (!seen.has(randomItem.answer)) {
+                    wrongs.push(randomItem);
+                    seen.add(randomItem.answer);
+                }
+            }
+            return wrongs;
+        }
+
+        function loadLevel() {
+            if (allQuestions.length === 0) {
+                document.getElementById('feedback-msg').textContent = "恭喜你！你已完成所有题目！";
+                document.getElementById('timer-display').style.display = 'none';
+                return;
+            }
+            
+            gameActive = true;
+            hasMadeMistakeThisRound = false;
+            currentQuestion = allQuestions.pop();
+            
+            currentQuestion.type = Math.random() < 0.5 ? 1 : 2;
+            
+            clearInterval(countdownTimer);
+            timeLeft = 10;
+            document.getElementById('timer-display').textContent = `时间: ∞`; // Timer greyed out/disabled
+            /*
+            countdownTimer = setInterval(() => {
+                if (!gameActive) return;
+                timeLeft--;
+                document.getElementById('timer-display').textContent = `时间: ${timeLeft}秒`;
+                if (timeLeft <= 0) {
+                    clearInterval(countdownTimer);
+                    timeIsUp();
+                }
+            }, 1000);
+            */
+            
+            document.getElementById('level-indicator').innerHTML = `
+                第 ${currentRound} 关 / 共 ${totalQuestions} 关<br>
+                <span style="font-size: 0.8em; color: #2E7D32;">✅ <span id="score-b">${scoreBetul}</span></span> | 
+                <span style="font-size: 0.8em; color: #c62828;">❌ <span id="score-s">${scoreSalah}</span></span>
+            `;
+            
+            const prefixEl = document.getElementById('prefix');
+            const instructionMsg = document.getElementById('instruction-text');
+            
+            if (currentQuestion.type === 1) {
+                prefixEl.innerHTML = currentQuestion.display + "<br><span style='font-size: 0.8em; color: #757575;'>" + currentQuestion.display2 + "</span>";
+                instructionMsg.innerHTML = "请为这个意思选择正确的 Simpulan Bahasa (成语)。";
+            } else {
+                prefixEl.innerHTML = "<span style='font-size: 1.5em; color: #333;'>" + currentQuestion.answer + "</span>";
+                instructionMsg.innerHTML = "请选择这个 Simpulan Bahasa (成语) 的正确意思。";
+            }
+            
+            prefixEl.style.display = 'block';
+            prefixEl.style.animation = '';
+            prefixEl.style.transition = 'none';
+            prefixEl.style.left = '';
+            prefixEl.style.top = '';
+            prefixEl.style.transform = '';
+            prefixEl.style.opacity = '1';
+            
+            document.getElementById('result-word').style.display = 'none';
+            instructionMsg.style.display = 'block';
+
+            const feedbackMsg = document.getElementById('feedback-msg');
+            feedbackMsg.textContent = "";
+            
+            let wrongItems = generateWrongChoices(currentQuestion.answer);
+            
+            let choices = [];
+            if (currentQuestion.type === 1) {
+                choices.push({ text: currentQuestion.answer, isCorrect: true, reason: "" });
+                choices.push({ text: wrongItems[0].answer, isCorrect: false, reason: "错 ！" });
+                choices.push({ text: wrongItems[1].answer, isCorrect: false, reason: "错 ！" });
+            } else {
+                choices.push({ text: currentQuestion.display + "<br><span style='font-size: 0.7em; color: #555;'>" + currentQuestion.display2 + "</span>", isCorrect: true, reason: "" });
+                choices.push({ text: wrongItems[0].display + "<br><span style='font-size: 0.7em; color: #555;'>" + wrongItems[0].display2 + "</span>", isCorrect: false, reason: "错 ！" });
+                choices.push({ text: wrongItems[1].display + "<br><span style='font-size: 0.7em; color: #555;'>" + wrongItems[1].display2 + "</span>", isCorrect: false, reason: "错 ！" });
+            }
+            
+            choices = shuffleArray(choices);
+
+            const container = document.getElementById('words-container');
+            container.innerHTML = ''; 
+            
+            choices.forEach(choice => {
+                const btn = document.createElement('button');
+                btn.className = 'root-word';
+                if (currentQuestion.type === 2) {
+                    btn.style.fontSize = '1.1em';
+                    btn.style.padding = '8px 5px';
+                }
+                btn.innerHTML = choice.text;
+                btn.onclick = () => checkAnswer(choice, btn);
+                container.appendChild(btn);
+            });
+        }
+
+        function checkAnswer(choice, btn) {
+            if (!gameActive) return;
+
+            const buttons = document.querySelectorAll('.root-word');
+            const feedbackMsg = document.getElementById('feedback-msg');
+            const resultWord = document.getElementById('result-word');
+            const prefixEl = document.getElementById('prefix');
+
+            if (choice.isCorrect) {
+                playSFX('sfx-correct');
+                clearInterval(countdownTimer); 
+                if (!hasMadeMistakeThisRound) {
+                    scoreBetul++;
+                    document.getElementById('score-b').textContent = scoreBetul;
+                }
+                
+                btn.classList.add('correct');
+                
+                prefixEl.style.animation = 'none'; 
+                prefixEl.style.transition = 'all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1)';
+                prefixEl.style.transform = 'none';
+                
+                prefixEl.style.left = '50%';
+                prefixEl.style.top = '30%';
+                prefixEl.style.transform = 'translateX(-50%)';
+                prefixEl.style.opacity = '0';
+
+                buttons.forEach(b => {
+                    if (b !== btn) b.classList.add('grayed-out');
+                });
+
+                document.getElementById('instruction-text').style.display = 'none';
+                feedbackMsg.textContent = "对 ！";
+                feedbackMsg.style.color = "#2E7D32";
+
+                let equationHTML = "";
+                if (currentQuestion.type === 1) {
+                    equationHTML = `"${currentQuestion.display}"<br><span style="font-size: 0.7em; color: #555;">${currentQuestion.display2}</span><br><br><span style="font-size: 1.5em; color: #2E7D32; background: white; padding: 5px 15px; border-radius: 10px; border: 2px solid #4CAF50;">${choice.text}</span>`;
+                } else {
+                    equationHTML = `<span style="font-size: 1.5em; color: #2E7D32; background: white; padding: 5px 15px; border-radius: 10px; border: 2px solid #4CAF50;">${currentQuestion.answer}</span><br><br><span style="font-size: 0.8em; color: #333;">${choice.text}</span>`;
+                }
+
+                setTimeout(() => {
+                    prefixEl.style.display = 'none';
+                    resultWord.innerHTML = equationHTML;
+                    resultWord.style.display = 'block';
+                    
+                    setTimeout(() => {
+                        nextLevel();
+                    }, 3000);
+                }, 600);
+
+                gameActive = false;
+            } else {
+                playSFX('sfx-wrong');
+                btn.classList.add('incorrect');
+                btn.style.pointerEvents = 'none';
+                feedbackMsg.innerHTML = choice.reason;
+                feedbackMsg.style.color = "#D32F2F";
+                
+                if (!hasMadeMistakeThisRound) {
+                    hasMadeMistakeThisRound = true;
+                }
+                scoreSalah++;
+                document.getElementById('score-s').textContent = scoreSalah;
+            }
+        }
+        
+        function timeIsUp() {
+            if (!gameActive) return;
+            gameActive = false;
+            
+            playSFX('sfx-timeout');
+            
+            if (!hasMadeMistakeThisRound) {
+                scoreSalah++;
+                document.getElementById('score-s').textContent = scoreSalah;
+            }
+            
+            const feedbackMsg = document.getElementById('feedback-msg');
+            feedbackMsg.innerHTML = "超时 ！";
+            feedbackMsg.style.color = "#D32F2F";
+            
+            const buttons = document.querySelectorAll('.root-word');
+            buttons.forEach(b => {
+                b.style.pointerEvents = 'none';
+                let isCorrectBtn = false;
+                if (currentQuestion.type === 1) {
+                    if (b.innerHTML === currentQuestion.answer) isCorrectBtn = true;
+                } else {
+                    if (b.innerHTML.includes(currentQuestion.display)) isCorrectBtn = true;
+                }
+                
+                if (isCorrectBtn) {
+                    b.classList.add('correct');
+                } else {
+                    b.classList.add('grayed-out');
+                }
+            });
+            
+            setTimeout(() => {
+                nextLevel();
+            }, 3000);
+        }
+
+        function nextLevel() {
+            currentRound++;
+            loadLevel();
+        }
+
+        window.onload = loadData;
+    </script>
+</body>
+</html>
