@@ -273,5 +273,690 @@
     "answer": "Keras kepala",
     "display": "Sangat degil",
     "display2": "非常固执"
+  },
+  {
+    "answer": "Ada angin",
+    "display": "Bertabiat gila-gila",
+    "display2": "喜怒无常"
+  },
+  {
+    "answer": "Ada hati",
+    "display": "Mempunyai keinginan",
+    "display2": "有心，有欲望"
+  },
+  {
+    "answer": "Air muka",
+    "display": "Rupa atau wajah",
+    "display2": "脸色，容貌"
+  },
+  {
+    "answer": "Ajak-ajak ayam",
+    "display": "Mempelawa secara tidak bersungguh",
+    "display2": "虚情假意的邀请"
+  },
+  {
+    "answer": "Akal kancil",
+    "display": "Sangat cerdik dan tipu muslihat",
+    "display2": "狡猾，多计谋"
+  },
+  {
+    "answer": "Ambil angin",
+    "display": "Bersiar-siar mengambil udara bersih",
+    "display2": "散心，呼吸新鲜空气"
+  },
+  {
+    "answer": "Anak bapa",
+    "display": "Anak yang berani atau disayangi bapa",
+    "display2": "父亲最疼爱的孩子"
+  },
+  {
+    "answer": "Anak yatim",
+    "display": "Anak yang kematian bapa",
+    "display2": "孤儿"
+  },
+  {
+    "answer": "Anak piatu",
+    "display": "Anak yang kematian ibu",
+    "display2": "失去母亲的孩子"
+  },
+  {
+    "answer": "Anak yatim piatu",
+    "display": "Kematian ibu bapa",
+    "display2": "父母双亡的孤儿"
+  },
+  {
+    "answer": "Anak tekak",
+    "display": "Bahagian dalam mulut",
+    "display2": "小舌头"
+  },
+  {
+    "answer": "Angkat bakul",
+    "display": "Memuji diri sendiri",
+    "display2": "自吹自擂"
+  },
+  {
+    "answer": "Asam garam",
+    "display": "Pengalaman hidup",
+    "display2": "生活经验"
+  },
+  {
+    "answer": "Atas pagar",
+    "display": "Tidak menyebelahi mana-mana pihak",
+    "display2": "中立"
+  },
+  {
+    "answer": "Babi buta",
+    "display": "Membabi buta / Melulu",
+    "display2": "盲目地"
+  },
+  {
+    "answer": "Banyak mulut",
+    "display": "Suka bercakap",
+    "display2": "多话"
+  },
+  {
+    "answer": "Barang kemas",
+    "display": "Perhiasan wanita",
+    "display2": "首饰"
+  },
+  {
+    "answer": "Batu loncatan",
+    "display": "Alat untuk mencapai tujuan",
+    "display2": "跳板"
+  },
+  {
+    "answer": "Bau-bau bacang",
+    "display": "Tali persaudaraan yang jauh",
+    "display2": "远亲"
+  },
+  {
+    "answer": "Bawah umur",
+    "display": "Belum cukup umur",
+    "display2": "未成年"
+  },
+  {
+    "answer": "Bekas luka",
+    "display": "Parut",
+    "display2": "疤痕"
+  },
+  {
+    "answer": "Berat sebelah",
+    "display": "Tidak adil",
+    "display2": "偏心，不公平"
+  },
+  {
+    "answer": "Berat mulut",
+    "display": "Pendiam",
+    "display2": "沉默寡言"
+  },
+  {
+    "answer": "Beri muka",
+    "display": "Terlalu memanjakan",
+    "display2": "纵容"
+  },
+  {
+    "answer": "Bermuka dua",
+    "display": "Tidak jujur",
+    "display2": "双面人，虚伪"
+  },
+  {
+    "answer": "Bertikam lidah",
+    "display": "Bertengkar",
+    "display2": "争吵"
+  },
+  {
+    "answer": "Bintang terang",
+    "display": "Bernasib baik",
+    "display2": "运气好"
+  },
+  {
+    "answer": "Bintang gelap",
+    "display": "Bernasib malang",
+    "display2": "倒霉"
+  },
+  {
+    "answer": "Bodoh sombong",
+    "display": "Bodoh tetapi tidak mahu bertanya",
+    "display2": "愚蠢又骄傲"
+  },
+  {
+    "answer": "Buah hati",
+    "display": "Orang yang disayangi",
+    "display2": "心上人"
+  },
+  {
+    "answer": "Buah pena",
+    "display": "Hasil tulisan",
+    "display2": "写作成果"
+  },
+  {
+    "answer": "Buah fikiran",
+    "display": "Pendapat",
+    "display2": "意见，想法"
+  },
+  {
+    "answer": "Buka mata",
+    "display": "Sedar / Meluaskan pandangan",
+    "display2": "觉悟，大开眼界"
+  },
+  {
+    "answer": "Buka mulut",
+    "display": "Mula bercakap",
+    "display2": "开口说话"
+  },
+  {
+    "answer": "Bunga dedap",
+    "display": "Cantik tetapi tidak berbudi bahasa",
+    "display2": "虚有其表"
+  },
+  {
+    "answer": "Buruk siku",
+    "display": "Meminta kembali barang yang telah diberi",
+    "display2": "讨回已送出的东西"
+  },
+  {
+    "answer": "Buta hati",
+    "display": "Zalim / Tidak bertimbang rasa",
+    "display2": "残酷无情"
+  },
+  {
+    "answer": "Cabut lari",
+    "display": "Lari dengan pantas ketakutan",
+    "display2": "逃跑"
+  },
+  {
+    "answer": "Cacing kepanasan",
+    "display": "Gelisah",
+    "display2": "焦急，坐立不安"
+  },
+  {
+    "answer": "Cahaya mata",
+    "display": "Anak",
+    "display2": "孩子"
+  },
+  {
+    "answer": "Cakar harimau",
+    "display": "Orang yang garang",
+    "display2": "凶恶的人"
+  },
+  {
+    "answer": "Campur aduk",
+    "display": "Bercampur gaul",
+    "display2": "混杂"
+  },
+  {
+    "answer": "Cari pasal",
+    "display": "Sengaja mencari gaduh",
+    "display2": "惹事，自找麻烦"
+  },
+  {
+    "answer": "Cepat tangan",
+    "display": "Suka mencuri",
+    "display2": "喜欢偷东西"
+  },
+  {
+    "answer": "Dalam tangan",
+    "display": "Pasti akan dapat",
+    "display2": "十拿九稳"
+  },
+  {
+    "answer": "Darah daging",
+    "display": "Anak kandung atau saudara mara",
+    "display2": "亲生骨肉"
+  },
+  {
+    "answer": "Darah muda",
+    "display": "Semangat orang muda",
+    "display2": "年轻气盛"
+  },
+  {
+    "answer": "Darah panas",
+    "display": "Lekas marah",
+    "display2": "容易生气"
+  },
+  {
+    "answer": "Durian runtuh",
+    "display": "Keuntungan yang tidak disangka",
+    "display2": "意外之财"
+  },
+  {
+    "answer": "Gaji buta",
+    "display": "Mendapat gaji tanpa bekerja kuat",
+    "display2": "白领薪水"
+  },
+  {
+    "answer": "Gelap mata",
+    "display": "Hilang pertimbangan kerana wang",
+    "display2": "见钱眼开"
+  },
+  {
+    "answer": "Gila bayang",
+    "display": "Mencintai seseorang tidak berbalas",
+    "display2": "单相思"
+  },
+  {
+    "answer": "Golok kayu",
+    "display": "Senjata yang tidak berguna",
+    "display2": "无用的武器"
+  },
+  {
+    "answer": "Gulung tikar",
+    "display": "Bankrap / Perniagaan ditutup",
+    "display2": "破产，倒闭"
+  },
+  {
+    "answer": "Habis akal",
+    "display": "Buntu fikiran",
+    "display2": "毫无办法"
+  },
+  {
+    "answer": "Hancur hati",
+    "display": "Sangat sedih",
+    "display2": "非常伤心"
+  },
+  {
+    "answer": "Hanyut akal",
+    "display": "Gila",
+    "display2": "发疯"
+  },
+  {
+    "answer": "Harga diri",
+    "display": "Kehormatan diri",
+    "display2": "尊严"
+  },
+  {
+    "answer": "Hati emas",
+    "display": "Baik hati",
+    "display2": "善良"
+  },
+  {
+    "answer": "Hidung belang",
+    "display": "Lelaki yang suka perempuan",
+    "display2": "好色的男人"
+  },
+  {
+    "answer": "Hilang akal",
+    "display": "Tidak tahu apa yang hendak dibuat",
+    "display2": "失去理智"
+  },
+  {
+    "answer": "Ikat perut",
+    "display": "Menahan lapar untuk berjimat",
+    "display2": "节衣缩食"
+  },
+  {
+    "answer": "Isi hati",
+    "display": "Perasaan",
+    "display2": "心声"
+  },
+  {
+    "answer": "Jalan pintas",
+    "display": "Cara yang cepat",
+    "display2": "捷径"
+  },
+  {
+    "answer": "Jantung hati",
+    "display": "Orang yang sangat disayangi",
+    "display2": "心肝宝贝"
+  },
+  {
+    "answer": "Jauh hati",
+    "display": "Tersinggung",
+    "display2": "伤心，不高兴"
+  },
+  {
+    "answer": "Jejak langkah",
+    "display": "Mengikut contoh yang baik",
+    "display2": "步人后尘"
+  },
+  {
+    "answer": "Kaki botol",
+    "display": "Pemabuk",
+    "display2": "酒鬼"
+  },
+  {
+    "answer": "Kaki judi",
+    "display": "Orang yang suka berjudi",
+    "display2": "赌徒"
+  },
+  {
+    "answer": "Kaki sembang",
+    "display": "Suka berbual panjang",
+    "display2": "喜欢聊天的人"
+  },
+  {
+    "answer": "Kecil hati",
+    "display": "Tersinggung",
+    "display2": "小气，心里难受"
+  },
+  {
+    "answer": "Keras hati",
+    "display": "Tetap pendirian",
+    "display2": "意志坚决"
+  },
+  {
+    "answer": "Kutu jalan",
+    "display": "Orang yang merayau tanpa tujuan",
+    "display2": "流浪者"
+  },
+  {
+    "answer": "Lapang dada",
+    "display": "Berasa lega",
+    "display2": "宽心，放心"
+  },
+  {
+    "answer": "Lebai malang",
+    "display": "Orang yang selalu bernasib malang",
+    "display2": "倒霉的人"
+  },
+  {
+    "answer": "Lepas tangan",
+    "display": "Tidak mahu campur tangan",
+    "display2": "撒手不管"
+  },
+  {
+    "answer": "Lidah bercabang",
+    "display": "Kata-kata yang tidak boleh dipercayai",
+    "display2": "说话不可靠"
+  },
+  {
+    "answer": "Lidah biawak",
+    "display": "Kata-kata yang selalu berubah-ubah",
+    "display2": "食言，说话不算数"
+  },
+  {
+    "answer": "Lupa daratan",
+    "display": "Melampaui batas",
+    "display2": "忘乎所以"
+  },
+  {
+    "answer": "Lurus bendul",
+    "display": "Lurus hati atau lurus akal",
+    "display2": "呆板，老实"
+  },
+  {
+    "answer": "Mabuk kepayang",
+    "display": "Terlalu asyik bercinta",
+    "display2": "陷入热恋"
+  },
+  {
+    "answer": "Makan suap",
+    "display": "Menerima rasuah",
+    "display2": "接受贿赂"
+  },
+  {
+    "answer": "Mandi bunga",
+    "display": "Mandi untuk membuang sial",
+    "display2": "洗花澡以去霉运"
+  },
+  {
+    "answer": "Masam muka",
+    "display": "Merajuk atau bermusuh",
+    "display2": "赌气，冷战"
+  },
+  {
+    "answer": "Mata air",
+    "display": "Kekasih",
+    "display2": "情人"
+  },
+  {
+    "answer": "Mata keranjang",
+    "display": "Lelaki pantang melihat perempuan cantik",
+    "display2": "好色之徒"
+  },
+  {
+    "answer": "Mati akal",
+    "display": "Buntu",
+    "display2": "无计可施"
+  },
+  {
+    "answer": "Mati katak",
+    "display": "Kematian yang sia-sia",
+    "display2": "枉死"
+  },
+  {
+    "answer": "Membabi buta",
+    "display": "Melakukan sesuatu tanpa berfikir",
+    "display2": "盲目做事"
+  },
+  {
+    "answer": "Membanting tulang",
+    "display": "Bekerja keras",
+    "display2": "拼命工作"
+  },
+  {
+    "answer": "Memerah keringat",
+    "display": "Bekerja kuat",
+    "display2": "流汗劳作"
+  },
+  {
+    "answer": "Memerah otak",
+    "display": "Berfikir keras",
+    "display2": "绞尽脑汁"
+  },
+  {
+    "answer": "Mencuci mata",
+    "display": "Melihat benda-benda yang cantik",
+    "display2": "欣赏美景"
+  },
+  {
+    "answer": "Menikam dari belakang",
+    "display": "Mengkhianati rakan",
+    "display2": "暗箭伤人"
+  },
+  {
+    "answer": "Minta diri",
+    "display": "Meminta izin untuk pulang",
+    "display2": "告辞"
+  },
+  {
+    "answer": "Muka tembok",
+    "display": "Tidak tahu malu",
+    "display2": "厚脸皮"
+  },
+  {
+    "answer": "Mulut tempayan",
+    "display": "Tidak boleh menyimpan rahsia",
+    "display2": "无法保守秘密的人"
+  },
+  {
+    "answer": "Murah hati",
+    "display": "Suka menderma",
+    "display2": "慷慨"
+  },
+  {
+    "answer": "Naik angin",
+    "display": "Sangat marah",
+    "display2": "发脾气"
+  },
+  {
+    "answer": "Nyawa-nyawa ikan",
+    "display": "Hampir mati",
+    "display2": "奄奄一息"
+  },
+  {
+    "answer": "Orang atasan",
+    "display": "Orang berpangkat tinggi",
+    "display2": "高层人物"
+  },
+  {
+    "answer": "Orang bawahan",
+    "display": "Pekerja bawahan",
+    "display2": "下属"
+  },
+  {
+    "answer": "Otak udang",
+    "display": "Bodoh",
+    "display2": "愚笨"
+  },
+  {
+    "answer": "Pak Turut",
+    "display": "Orang yang hanya mengikut arahan",
+    "display2": "盲从的人"
+  },
+  {
+    "answer": "Panas baran",
+    "display": "Lekas marah",
+    "display2": "暴躁"
+  },
+  {
+    "answer": "Panjang akal",
+    "display": "Cerdik",
+    "display2": "聪明，有远见"
+  },
+  {
+    "answer": "Pasang badan",
+    "display": "Berhias diri",
+    "display2": "打扮"
+  },
+  {
+    "answer": "Patah hati",
+    "display": "Kecewa",
+    "display2": "灰心，伤心"
+  },
+  {
+    "answer": "Pekak badak",
+    "display": "Pura-pura tidak dengar",
+    "display2": "假装听不见"
+  },
+  {
+    "answer": "Perang mulut",
+    "display": "Bertengkar",
+    "display2": "舌战，口角"
+  },
+  {
+    "answer": "Pisau cukur",
+    "display": "Perempuan suka habiskan wang lelaki",
+    "display2": "拜金女"
+  },
+  {
+    "answer": "Rabun ayam",
+    "display": "Tidak jelas melihat waktu senja",
+    "display2": "夜盲症"
+  },
+  {
+    "answer": "Rambang mata",
+    "display": "Tidak tahu yang mana hendak dipilih",
+    "display2": "眼花缭乱"
+  },
+  {
+    "answer": "Retak tangan",
+    "display": "Nasib",
+    "display2": "命运"
+  },
+  {
+    "answer": "Sakit hati",
+    "display": "Marah / Tersinggung",
+    "display2": "生气"
+  },
+  {
+    "answer": "Salah bantal",
+    "display": "Sakit leher ketika bangun",
+    "display2": "落枕"
+  },
+  {
+    "answer": "Sehelai sepinggang",
+    "display": "Pakaian pada tubuh sahaja",
+    "display2": "只有身上的衣服，一贫如洗"
+  },
+  {
+    "answer": "Senyum kambing",
+    "display": "Senyum mengejek",
+    "display2": "嘲笑"
+  },
+  {
+    "answer": "Serkap jarang",
+    "display": "Tuduhan tanpa usul periksa",
+    "display2": "胡乱指责"
+  },
+  {
+    "answer": "Tahi hidung masin",
+    "display": "Kedekut",
+    "display2": "吝啬"
+  },
+  {
+    "answer": "Tali barut",
+    "display": "Penyampai rahsia musuh",
+    "display2": "走狗"
+  },
+  {
+    "answer": "Tanda mata",
+    "display": "Hadiah kenangan",
+    "display2": "纪念品"
+  },
+  {
+    "answer": "Tangan terbuka",
+    "display": "Suka menolong / Sedia menerima",
+    "display2": "乐意帮忙 / 欢迎"
+  },
+  {
+    "answer": "Tangkai hati",
+    "display": "Orang yang disayangi",
+    "display2": "心爱的人"
+  },
+  {
+    "answer": "Tawar hati",
+    "display": "Tidak bersemangat lagi",
+    "display2": "灰心"
+  },
+  {
+    "answer": "Tebal muka",
+    "display": "Tidak tahu malu",
+    "display2": "厚颜无耻"
+  },
+  {
+    "answer": "Telinga kuali",
+    "display": "Tahan dimarahi",
+    "display2": "经得起责骂"
+  },
+  {
+    "answer": "Terang hati",
+    "display": "Cepat faham",
+    "display2": "容易领悟"
+  },
+  {
+    "answer": "Tidur-tidur ayam",
+    "display": "Tidur yang tidak nyenyak",
+    "display2": "浅睡"
+  },
+  {
+    "answer": "Tin kosong",
+    "display": "Banyak cakap tetapi tiada hasil",
+    "display2": "纸上谈兵的人"
+  },
+  {
+    "answer": "Tolak ansur",
+    "display": "Saling mengalah",
+    "display2": "互相让步"
+  },
+  {
+    "answer": "Tulang belakang",
+    "display": "Orang yang menjadi sumber kekuatan",
+    "display2": "骨干，支柱"
+  },
+  {
+    "answer": "Untung batu",
+    "display": "Nasib buruk",
+    "display2": "倒霉"
+  },
+  {
+    "answer": "Untung sabut",
+    "display": "Nasib baik",
+    "display2": "走运"
+  },
+  {
+    "answer": "Wang kopi",
+    "display": "Upah / Rasuah kecil",
+    "display2": "喝茶钱，酬劳"
+  },
+  {
+    "answer": "Wang saku",
+    "display": "Wang perbelanjaan",
+    "display2": "零用钱"
+  },
+  {
+    "answer": "Yatim piatu",
+    "display": "Tidak mempunyai ibu bapa",
+    "display2": "父母双亡"
   }
 ]
